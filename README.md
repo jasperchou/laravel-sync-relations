@@ -4,7 +4,7 @@
 [![Software License][ico-license]](LICENSE.md)
 [![Build Status][ico-travis]][link-travis]
 
-Small package to sync one to many and polymorphic one to many in Laravel Eloquent.
+Small package to sync one to many and polymorphic one to many data in Laravel Eloquent.
 
 ## Install
 
@@ -13,6 +13,40 @@ Via Composer
 ``` bash
 $ composer require routegroup/laravel-sync-relations
 ```
+
+## Example
+
+In model
+``` php
+    public function setOptionsAttribute($items)
+    {
+        if (!$this->exists) {
+            return ;
+        }
+
+        // this->options() is method which returns \Illuminate\Database\Eloquent\Relations\HasMany
+        return new SyncOneToMany($items, $this->options(), [
+            'page_id' => $this->id
+        ]);
+    }
+```
+
+In ex. controller
+``` php
+    public function create()
+    {
+        $page = Page::create([...]);
+
+        $page->options = [
+            ['name' => 'Option 1'],
+            ['name' => 'Option 2'],
+            ['name' => 'Option 3']
+        ];
+    }
+```
+
+Options can be as json encoded data, laravel collection or just array.
+For more examples look at tests.
 
 ## License
 

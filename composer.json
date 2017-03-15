@@ -38,10 +38,5 @@
         "psr-4": {
             "Routegroup\\Database\\Relations\\": "tests"
         }
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "3.4-dev"
-        }
     }
 }
