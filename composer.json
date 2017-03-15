@@ -1,0 +1,47 @@
+{
+    "name": "routegroup/laravel-sync-relations",
+    "description": "Sync relationships for Eloquent",
+    "keywords": [
+        "routegroup",
+        "native-framework",
+        "relations",
+        "sync",
+        "Eloquent"
+    ],
+    "homepage": "https://github.com/routegroup/laravel-sync-relations",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kajetan Nobel",
+            "email": "k.nobel@routegroup.pl",
+            "homepage": "http://routegroup.pl",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php" : "~5.6|~7.0",
+        "illuminate/support": "~5",
+        "illuminate/database": "~5"
+    },
+    "require-dev": {
+        "fzaninotto/faker": "~1.4",
+        "phpunit/phpunit": "~5.7",
+        "orchestra/testbench": "~3.4",
+        "orchestra/database": "3.4.x-dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "Routegroup\\Database\\Relations\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Routegroup\\Database\\Relations\\": "tests"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "3.4-dev"
+        }
+    }
+}
